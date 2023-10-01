@@ -20,6 +20,8 @@ void print_memory_sizes(void);
 
 void app_main(void) {
 
+    ESP_LOGI("ESP32 MCU Info", "---------------------------------------------------------");
+
     print_chip_info();
 
     print_freq_info();
@@ -34,8 +36,6 @@ void app_main(void) {
 
 void print_chip_info(void) {
     esp_chip_info(&chip_info);
-
-    ESP_LOGI("ESP32 MCU Info", "---------------------------------------------------------");
 
     ESP_LOGI("Chip Info", "Chip Model: %s", get_chip_model(chip_info.model));
     ESP_LOGI("Chip Info", "Cores: %d", chip_info.cores);
